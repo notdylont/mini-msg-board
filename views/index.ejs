@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <Title>Message Board</Title>
+  </head>
+  <body>
+    <%- include('navbar') %>
+    <h2>Messages</h2>
+    <ul>
+        <% messages.forEach((message) => { %> 
+            <li><span><%= message.added %></span> <%= message.user %>: <%= message.text %> <a href="/<%= message.id %>">Open</a></li>
+        <% }) %>
+    </ul>
+  </body>
+</html>

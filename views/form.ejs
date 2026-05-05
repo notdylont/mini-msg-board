@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <Title>Message Board</Title>
+  </head>
+  <body>
+    <%- include('navbar') %>
+    <form method="POST" action="/new">
+      <h2>Message Form</h2>
+      <label for="user">Name:</label>
+      <input type="text" name="user" required />
+      <label for="message">Message:</label>
+      <input type="text" name="message" required />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
