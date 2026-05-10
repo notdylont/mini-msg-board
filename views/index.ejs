@@ -7,7 +7,7 @@
     <h2>Messages</h2>
     <ul>
         <% messages.forEach((message) => { %> 
-            <li><span><%= message.added %></span> <%= message.user %>: <%= message.text %> <a href="/<%= message.id %>">Open</a></li>
+            <li><span><%= message.added.toLocaleDateString() %></span> <strong><%= message.username %>:</strong> <%= message.message %> <a href="/<%= message.id %>">Open</a></li>
         <% }) %>
     </ul>
   </body>

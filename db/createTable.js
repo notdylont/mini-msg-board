@@ -1,0 +1,26 @@
+const { Client } = require('pg');
+
+const SQL = `
+CREATE TABLE messages (
+   id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+   username VARCHAR ( 255 ), 
+   message VARCHAR ( 255 ), 
+   added TIMESTAMP 
+);  
+
+INSERT INTO messages (username, message, added) VALUES 
+('Lebron', 'I don''t read books much', NOW());
+`;
+
+async function main() {
+  console.log('seeding...');
+  const client = new Client({
+    connectionString: `postgresql://${process.env.USER}:${process.env.PASSWORD}@${process.env.HOST}:${process.env.DB_PORT}/${process.env.DATABASE}`,
+  });
+  await client.connect();
+  await client.query(SQL);
+  await client.end();
+  console.log('done');
+}
+
+main();

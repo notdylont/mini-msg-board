@@ -3,9 +3,10 @@
     <title>Message Board</title>
   </head>
   <body>
+    <%- include('navbar') %>
+    <h2>Details for <%= message.username %>'s message</h2>
+    <p>Sent: <%= message.added.toLocaleString() %></p>
+    <p><%= message.message %></p>
     <a href="/">Back</a>
-    <h3>Details for <%= message.user %>'s message</h3>
-    <p>Sent: <%= message.added %></p>
-    <p>Message: <%= message.text %></p>
   </body>
 </html>

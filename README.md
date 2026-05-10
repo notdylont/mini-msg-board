@@ -1,1 +1,1 @@
-# mini-message-board
+# mini-msg-board
