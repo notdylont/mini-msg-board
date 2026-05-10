@@ -10,6 +10,11 @@ function newFormGet(req, res) {
 }
 
 async function newFormPost(req, res) {
+  if (req.body.user.length > 24) {
+    return res
+      .status(400)
+      .send('username is too long <a href="/new">Go back</a>');
+  }
   await db.insertMessage(req.body.user, req.body.message);
   res.redirect('/');
 }
